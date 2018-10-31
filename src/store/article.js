@@ -1,5 +1,5 @@
 import fb from 'firebase/app'
-import 'firebase/database'
+import 'firebase/firestore'
 
 export default {
   state: {
@@ -15,11 +15,14 @@ export default {
       let ar = []
       commit('SET_LOADING', true)
       try{
-        let d = await fb.database().ref('articles').once('value')
-        d = d.val()
-        for(var i in d){
-          ar.push(d[i])
-        }
+        const fs = fb.firestore()
+        fs.settings({timestampsInSnapshots: true})
+        let d = await fs.collection('articles').get()
+        console.log(d.docs)
+        // let d = await fb.database().ref('articles').once('value')
+        d.docs.forEach((item)=>{
+          ar.push(item.data())
+        })
         commit('SET_ARTICLES', ar)
         commit('SET_LOADING', false)
       } catch (e){
