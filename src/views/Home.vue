@@ -1,7 +1,7 @@
 <template lang="pug">
   .text-xs-center
     h1 Главная страница
-    p это текст главной станицы
+    p это текст главной станицы c2
 
 </template>
 
