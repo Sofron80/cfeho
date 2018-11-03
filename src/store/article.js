@@ -19,6 +19,7 @@ export default {
         fs.settings({timestampsInSnapshots: true})
         let d = await fs.collection('articles').get()
         console.log(d.docs)
+        console.log(d.docs)
         // let d = await fb.database().ref('articles').once('value')
         d.docs.forEach((item)=>{
           ar.push(item.data())
