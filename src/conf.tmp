@@ -1,0 +1,26 @@
+{
+  "vetur.validation.template": false,
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ],
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 18,
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "vetur.completion.useScaffoldSnippets": false,
+  "workbench.colorTheme": "Material Theme High Contrast",
+  "workbench.iconTheme": "eq-material-theme-icons"
+}
