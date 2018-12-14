@@ -3,33 +3,32 @@ import 'firebase/firestore'
 
 export default {
   state: {
-   articles: null
+    articles: null
   },
   mutations: {
-    SET_ARTICLES(state, payload){
+    SET_ARTICLES(state, payload) {
       state.articles = payload
     }
   },
   actions: {
-    async loadArticles({commit}){
+    async loadArticles({ commit }) {
       let ar = []
       commit('SET_LOADING', true)
-      try{
+      try {
         const fs = fb.firestore()
-        fs.settings({timestampsInSnapshots: true})
+        fs.settings({ timestampsInSnapshots: true })
         let d = await fs.collection('articles').get()
-        d.docs.forEach((item)=>{
+        d.docs.forEach(item => {
           ar.push(item.data())
         })
         commit('SET_ARTICLES', ar)
         commit('SET_LOADING', false)
-      } catch (e){
+      } catch (e) {
         commit('SET_ERROR', e.message)
       }
     }
-
   },
   getters: {
-    getArticles:(state) => state.articles,
+    getArticles: state => state.articles
   }
 }

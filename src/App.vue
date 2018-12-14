@@ -7,18 +7,16 @@
 </template>
 
 <style>
-
 </style>
 
 <script>
 import AppHeader from '@/components/AppHeader'
 import AppFooter from '@/components/AppFooter'
 export default {
-  components:{
-    AppHeader, AppFooter
+  components: {
+    AppHeader,
+    AppFooter
   },
-  created(){
-    
-  }
+  created() {}
 }
 </script>

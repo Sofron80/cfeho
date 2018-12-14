@@ -6,15 +6,15 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
       footer: true
     }
   },
-  methods:{
-    setFooter(){
+  methods: {
+    setFooter() {
       console.log(this.footer)
-      this.footer=!this.footer
+      this.footer = !this.footer
     }
   }
 }

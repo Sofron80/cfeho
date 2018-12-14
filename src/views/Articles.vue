@@ -14,26 +14,25 @@
           v-card(v-for="(item, i) in getArticles" :key="i")
             v-card-title
             span {{item.title}}
+            br
             span {{item.text}}
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-    }
+  data() {
+    return {}
   },
-  computed:{
-    getArticles(){
+  computed: {
+    getArticles() {
       let a = this.$store.getters.getArticles
       return a
     },
-    isLoading(){
+    isLoading() {
       return this.$store.getters.getLoading
     }
-  }
-  ,
-  created(){
+  },
+  created() {
     this.$store.dispatch('loadArticles')
   }
 }

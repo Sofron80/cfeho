@@ -20,25 +20,25 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
       drawer: false
     }
   },
-  computed:{
-    menuItems(){
-      let menuItem =[
-        {title: 'Статьи', route: '/articles', icon: 'visibility'},
-        {title: 'Документы', route: '/docs', icon: 'subject'},
-        {title: 'Войти', route: '/login', icon: 'input'},
-        {title: 'Регистрация', route: '/signup', icon: 'lock_open'},
+  computed: {
+    menuItems() {
+      let menuItem = [
+        { title: 'Статьи', route: '/articles', icon: 'visibility' },
+        { title: 'Документы', route: '/docs', icon: 'subject' },
+        { title: 'Войти', route: '/login', icon: 'input' },
+        { title: 'Регистрация', route: '/signup', icon: 'lock_open' }
       ]
-      if (this.$store.getters.isLogin){
-        menuItem =[
-              {title: 'Статьи', route: '/articles', icon: 'visibility'},
-              {title: 'Документы', route: '/docs', icon: 'subject'},
-              {title: 'Аккаунт', route: '/profile', icon: 'account_circle'},
-              {title: 'Выйти', route: '/logout', icon: 'exit_to_app'}
+      if (this.$store.getters.isLogin) {
+        menuItem = [
+          { title: 'Статьи', route: '/articles', icon: 'visibility' },
+          { title: 'Документы', route: '/docs', icon: 'subject' },
+          { title: 'Аккаунт', route: '/profile', icon: 'account_circle' },
+          { title: 'Выйти', route: '/logout', icon: 'exit_to_app' }
         ]
       }
       return menuItem

@@ -18,39 +18,38 @@ v-content
 
 <script>
 export default {
-  data(){
+  data() {
     return {
       email: null,
       password: null
     }
   },
-  methods:{
-    async Login(){
+  methods: {
+    async Login() {
       let dat = {
         email: this.email,
         password: this.password
       }
       this.$store.dispatch('registerUser', dat)
-    },
+    }
   },
-  computed:{
-    isLogin(){
+  computed: {
+    isLogin() {
       return this.$store.getters.isLogin
     },
-    isError(){
+    isError() {
       return this.$store.getters.getError
     }
   },
-  watch:{
-    isLogin( value ) {
+  watch: {
+    isLogin(value) {
       if (value) {
         this.$router.push('/')
       }
     }
-
   },
-  created(){
-    if (this.isLogin){
+  created() {
+    if (this.isLogin) {
       this.$router.push('/')
     }
   }
